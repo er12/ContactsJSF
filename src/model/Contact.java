@@ -5,15 +5,15 @@ package model;
  */
 public class Contact
 {
-    String nombre, apellido, dirección, teléfono , correo;
+    String nombre, apellido, direccion, telefono, correo;
 
     public Contact() {}
 
-    public Contact(String nombre, String apellido, String dirección, String teléfono, String correo) {
+    public Contact(String nombre, String apellido, String direccion, String telefono, String correo) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.dirección = dirección;
-        this.teléfono = teléfono;
+        this.direccion = direccion;
+        this.telefono = telefono;
         this.correo = correo;
     }
 
@@ -25,28 +25,28 @@ public class Contact
         this.nombre = nombre;
     }
 
-    public String getSpellido() {
+    public String getApellido() {
         return apellido;
     }
 
-    public void setApellido(String spellido) {
+    public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
-    public String getDirección() {
-        return dirección;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDirección(String dirección) {
-        this.dirección = dirección;
+    public void setDireccion(String dirección) {
+        this.direccion = dirección;
     }
 
-    public String getTeléfono() {
-        return teléfono;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setTeléfono(String teléfono) {
-        this.teléfono = teléfono;
+    public void setTelefono(String teléfono) {
+        this.telefono = teléfono;
     }
 
     public String getCorreo() {

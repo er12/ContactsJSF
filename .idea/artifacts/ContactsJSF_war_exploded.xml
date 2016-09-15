@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="ContactsJSF" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="PrimeFaces-5.2" />
+          <element id="file-copy" path="$PROJECT_DIR$/../javax.faces-api-2.1.jar" />
+        </element>
       </element>
     </root>
   </artifact>

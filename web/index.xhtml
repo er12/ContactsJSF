@@ -4,8 +4,101 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-   <f:view>
-      <h:outputLabel value="Hello, world"/>
-   </f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+</h:head>
+<h:body>
+
+   <h1>Practica 1 - Contactos</h1>
+
+   <p:dataTable value="#{manageBean.contactos}" var="contact">
+
+      <p:column>
+         <!-- column header -->
+         <f:facet name="header">Nombre</f:facet>
+         <!-- row record -->
+         #{contact.nombre}
+      </p:column>
+
+      <p:column>
+         <f:facet name="header">Apellido</f:facet>
+         #{contact.apellido}
+      </p:column>
+
+      <p:column>
+         <f:facet name="header">Dirección</f:facet>
+         #{contact.direccion}
+      </p:column>
+
+      <p:column>
+         <f:facet name="header">Teléfono</f:facet>
+         #{contact.telefono}
+      </p:column>
+
+      <p:column>
+         <f:facet name="header">Correo</f:facet>
+         #{contact.correo}
+      </p:column>
+
+
+
+      <p:column>
+      <f:facet name="header">Editar</f:facet>
+         <h:form>
+            <p:commandLink value = "Editar" action="#{manageBean.setContactoActivo(contact)}" onclick="toggle()"></p:commandLink>
+         </h:form>
+
+      </p:column>
+
+      <p:column>
+         <f:facet name="header">Eliminar</f:facet>
+         <h:form>
+            <p:commandLink value="Eliminar" icon="plus-icon" action="#{manageBean.eliminarContactoActual(contact)}">
+            </p:commandLink>
+         </h:form>
+      </p:column>
+
+   </p:dataTable>
+
+
+   <br/>
+   <br/>
+
+   <h:form>
+      <h:outputLabel value="Nombre:  " /><p:inputText value="#{manageBean.nombre}"/>   <br/>
+      <h:outputLabel value="Apellido:" /><p:inputText value="#{manageBean.apellido}"/>   <br/>
+      <br/>
+      <p:commandButton action="#{manageBean.agregarContacto()}" value="Agregar Contacto" ajax = "false"></p:commandButton>
+   </h:form>
+
+   <br/><br/><br/><br/>
+   <h:form id ="editarForm" style="display: none">
+      <h:outputLabel value="Nombre:  " /><p:inputText value="#{manageBean.contactoActivo.nombre}" />   <br/>
+      <h:outputLabel value="Apellido:" /><p:inputText value="#{manageBean.contactoActivo.apellido}" />   <br/>
+      <h:outputLabel value="Direccion:" /><p:inputText value="#{manageBean.contactoActivo.direccion}" />   <br/>
+      <h:outputLabel value="Telefono: " /><p:inputText value="#{manageBean.contactoActivo.telefono}"/>   <br/>
+      <h:outputLabel value="Correo:   " /><p:inputText value="#{manageBean.contactoActivo.correo}"/>   <br/>
+      <br/>
+      <p:commandButton action="#{manageBean.modificarContacto()}" value="Modificar Contacto" ajax = "false"></p:commandButton>
+   </h:form>
+
+
+   <!---->
+
+
+   <script type="text/javascript">
+      function toggle() {
+         var element = document.getElementById("editarForm");
+         if(element.style.display == 'block') {
+            element.style.display = 'none';
+         } else {
+            element.style.display = 'block'
+         }
+      }
+   </script>
+
+</h:body>
+
 </html>
