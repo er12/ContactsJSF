@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GradleLocalSettings">
-    <option name="modificationStamps">
-      <map>
-        <entry key="$USER_HOME$/Desktop/SparkBarCamp2014" value="2925319976000" />
-        <entry key="$USER_HOME$/Desktop/grails3-angular2-master" value="1443653548000" />
-        <entry key="$USER_HOME$/Desktop/tt" value="1460256076819" />
-        <entry key="$PROJECT_DIR$/../../AT/StartOver/ControlVisitantes" value="1459983102930" />
-      </map>
-    </option>
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
